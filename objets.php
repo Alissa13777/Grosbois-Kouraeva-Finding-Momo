@@ -12,14 +12,13 @@ if (!$link) {
 
 mysqli_set_charset($link, "utf8");
 
-$nom = $_POST['nom'];
-$latitude = $_POST['latitude'];
-$longitude = $_POST['longitude'];
-$zoom = $_POST['niveau de zoom'];
-$icone = $_FILES['icone'];
-$indice = $_POST['indice'];
-$id = $_POST['id'];
-
+$nom = $_GET['nom'];
+$latitude = $_GET['latitude'];
+$longitude = $_GET['longitude'];
+$zoom = $_GET['niveau de zoom'];
+$icone = $_GET['icone'];
+$indice = $_GET['indice'];
+$id = $_GET['id'];
 $saumon = mysqli_query($link, "SELECT icone FROM objet WHERE nom='saumon'");
 
 if ($saumon) {
@@ -32,7 +31,12 @@ if ($saumon) {
 }
 
 
-//echo json_encode($saumon);
+// Test : affichage de l'objet saumon, sous forme JSON
+$test = mysqli_fetch_object($saumon);
+echo json_encode($test);
+
+
+mysqli_close($link);
 
 mysqli_close($link);
 ?>
