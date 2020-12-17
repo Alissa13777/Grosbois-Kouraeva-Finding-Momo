@@ -14,9 +14,9 @@ Pour jouer à Find’IGN Momo, il vous faut :
 
 Pour la base de données, vérifiez que vous avez bien les paramètres suivants :
 
-database : findmomo
-host : localhost
-user : mamp
+- database : findmomo
+- host : localhost
+- user : mamp
 
 N.B : le mot de passe n’est pas exigé. Mais il vaut mieux vérifier la configuration 
 de MAMP sur votre machine avant le lancer le jeu, car il se peut qu'un mot de passe 
