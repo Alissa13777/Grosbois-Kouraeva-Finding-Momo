@@ -1,4 +1,8 @@
-    /* @preserve
+ // Ceci est le .js de Maxime Grosbois et Alissa Kouraeva
+ 
+
+ //Leaflet
+ /* @preserve
  * Leaflet 1.7.1+Detached: bc918d4bdc2ba189807bc207c77080fb41ecc196.bc918d4, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2019 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
@@ -32,7 +36,7 @@ fetch('fetch.php', {
 .then(r => {
     console.log(r);
 
-    //Définition des variables associées aux objets
+    //Définition des variables associées aux objets avec les tailles des images et l'ancrage dans la carte
 
     var saumonIcon = L.icon({
     iconUrl: r[0]['image'],
@@ -133,7 +137,7 @@ fetch('fetch.php', {
 
     var maison = L.marker([r[4]['latitude'], r[4]['longitude']],{icon: maisonIcon}, {zoom:r[4]['niveau de zoom']}).bindPopup( r[4]['indice'] + "<br>" + form_maison + bouton_maison);
 
-    var feu = L.marker([r[2]['latitude'], r[2]['longitude']],{icon: feuIcon}, {zoom:r[2]['niveau de zoom']}).bindPopup(r[2]['indice']+ "<br>"+"<br>"+ "Libérez Momo à l'endroit suivant : 11/9/18/11/5/14/5/19 </br>" +  bouton_feu);
+    var feu = L.marker([r[2]['latitude'], r[2]['longitude']],{icon: feuIcon}, {zoom:r[2]['niveau de zoom']}).bindPopup(r[2]['indice']+ "<br>"+"<br>"+ "Libérez Momo à l'endroit suivant : 11 / 9 / 18 / 11 / 5 / 14 / 5 / 19 </br>" +  bouton_feu);
 
     var igloo_fin = L.marker([r[5]['latitude'], r[5]['longitude']],{icon: iglooIcon}, {zoom:r[5]['niveau de zoom']}).bindPopup(bouton_igloo);
 
@@ -141,7 +145,7 @@ fetch('fetch.php', {
 
 
 
-    //Images qui vont être rajoutées dans l'inventaire
+    //Images qui vont être rajoutées dans l'inventaire une fois l'objet "récupéré"
     var img_saum = document.createElement("img"); 
     img_saum.src = "images/saumon.png"; 
     img_saum.style.maxHeight = "50px";
@@ -161,6 +165,7 @@ fetch('fetch.php', {
     //On récupère les éléments du html pour mettre en lien le html et le js
 
     //boutons
+    //On récupère les boutons à partir des divs associées dans le html/php
     bouton = document.getElementById('bouton1');
     bouton_fin = document.getElementById('bouton2');
 
@@ -276,7 +281,7 @@ fetch('fetch.php', {
     // Objets visibles à partir d'un certain niveau de zoom uniquement
 
 
-
+    //igloo -> trolls
     igloo.addEventListener('click',function(){
         
         map.addEventListener('zoomend',function(){
@@ -290,7 +295,7 @@ fetch('fetch.php', {
         
     })
 
-
+    //trolls -> saumon
     trolls.addEventListener('click',function(){
         igloo.remove(map);
         document.getElementById("bouton_troll").addEventListener('click', function(){
@@ -309,7 +314,7 @@ fetch('fetch.php', {
     });
 
   
-
+    //saumon -> ours
     saumon.addEventListener('click',function(){
         document.getElementById("bouton_saumon").addEventListener('click', function(){
             inventaire_saumon.appendChild(img_saum); 
@@ -326,7 +331,7 @@ fetch('fetch.php', {
         });
     });
     
-
+    //ours -> code
     ours.addEventListener('click',function(){
         
         document.getElementById("bouton_ours").addEventListener('click', function(){
@@ -348,7 +353,7 @@ fetch('fetch.php', {
         );
     });
 
-
+    //code -> maison du pécheur
     code.addEventListener('click',function(){
         document.getElementById("bouton_code").addEventListener('click', function(){
             ours.remove(map);
@@ -366,7 +371,7 @@ fetch('fetch.php', {
     });
 
     
-
+    //maison du pécheur -> feu
     maison.addEventListener('click', function(){
         
         document.getElementById("bouton_maison").addEventListener('click',function(){
@@ -392,7 +397,7 @@ fetch('fetch.php', {
     });
 });
    
-
+    //feu -> igloo avec Momo
     feu.addEventListener('click', function(){
         document.getElementById("bouton_feu").addEventListener('click', function(){
             inventaire_feu.appendChild(img_feu);
@@ -401,9 +406,8 @@ fetch('fetch.php', {
         });
     });
 
-    // Etape finale: Déblocage de Momo 
 
-    
+    // Etape finale: Déblocage de Momo
     igloo_fin.addEventListener('click', function(){
         document.getElementById("bouton_igloo").addEventListener('click', function(){
             feu.remove(map);
@@ -416,18 +420,6 @@ fetch('fetch.php', {
     });
 
 
-    
-    
-    
-
-   
-    
-    
-
-   
-
-    
-    
     //Merci d'avoir lu jusque-là ;P
 
 
