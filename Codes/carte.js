@@ -137,7 +137,7 @@ fetch('fetch.php', {
 
     var igloo_fin = L.marker([r[5]['latitude'], r[5]['longitude']],{icon: iglooIcon}, {zoom:r[5]['niveau de zoom']}).bindPopup(bouton_igloo);
 
-    var momo = L.marker([r[3]['latitude'], r[3]['longitude']],{icon: momoIcon}, {zoom:r[3]['niveau de zoom']}).bindPopup("Vous m'avez libérée! Merci! <br><br> A nous les aventures dans le froid et les soirées de l'ENSG!"+ "<br>" + r[3]['indice']);
+    var momo = L.marker([r[3]['latitude'], r[3]['longitude']],{icon: momoIcon}, {zoom:r[3]['niveau de zoom']}).bindPopup("Vous m'avez libérée! Merci! <br><br> A nous les aventures dans le froid et les soirées de l'ENSG!");
 
 
 
