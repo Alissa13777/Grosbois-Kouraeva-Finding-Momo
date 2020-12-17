@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style_carte.css" />
+    <link rel="stylesheet" href= "style_game.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <title>Find'IGN Momo</title>
+    <link rel="icon" href="penguin.png" type="image/png">
+</head>
+<body>
+<div id="contenu">
+
+
+<div id="titre">
+    <img src="momo.png" width="80" height="100"> FIND'IGN MOMO <img src="momo.png" width="80" height="100">
+</div>
+
+<div id="consigne">
+    <strong>Panique en Norvège !</strong><br>
+    <div id="sous-consigne">J'ai capturé Momo (venue visiter ses cousins éloignés) sous la glace gnark gnark gnark! 
+        Votre mission si vous l'acceptez vous sera donnée en cliquant sur l'igloo!  
+    </div>
+</div>
+
+<div id ="scores">
+    <ul>Hall of fame</ul>
+    <ul> user : </ul>
+    <ul>scores : </ul>
+</div>
+
+<div id="start">
+    <form id="form" action="objets.php" action="fin.php" method="POST">
+        <label> User: <input type="text" name="pseudo" id="pseudo"></label>
+        <button id="bouton" class="start">START!</button>
+    </form>
+</div>
+
+<div id="map">
+
+</div>
+
+<!--création de l'inventaire pour les objets et codes récupérés-->
+<div id="objets">
+    <div id="obj_recup">     
+        INVENTAIRE
+        <div id="inventaire_saumon">
+        </div>
+        <div id="inventaire_code">
+            Rentrez le code pour vous en souvenir:
+        </div>
+        <div id="inventaire_feu">
+        </div>
+
+    </div>
+    
+</div>
+
+
+</div>
+
+
+<script src ="carte.js"> javascript </script>
+
+</body>
+</html>
